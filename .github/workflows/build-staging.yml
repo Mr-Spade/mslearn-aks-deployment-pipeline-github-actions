@@ -41,10 +41,10 @@ jobs:
       - name: Azure Kubernetes set context
         uses: Azure/aks-set-context@v3
         with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
           # Resource Group Name
           resource-group: mslearn-gh-pipelines-7033
           cluster-name: contoso-video
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
           
       - name: Run Helm Deploy
         run: |
